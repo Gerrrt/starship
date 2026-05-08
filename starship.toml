@@ -2,7 +2,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Give the palette a name
-palette = 'cyberdyne'
+palette = 'dracula'
 
 # Insert blank line between shell prompts
 add_newline = true
@@ -18,47 +18,47 @@ right_format = ""
 
 # Format the prompt
 format = """
-[](bg:white fg:black)\
+[](bg:red fg:background)\
 $os\
-[](bg:red fg:white)\
-$hostname\
 [](fg:red bg:orange)\
-$username\
+$hostname\
 [](fg:orange bg:yellow)\
-$directory\
+$username\
 [](fg:yellow bg:green)\
+$directory\
+[](fg:green bg:cyan)\
 $git_branch\
 $git_status\
 $git_state\
 $git_metrics\
-[](fg:green bg:cyan)\
+[](fg:cyan bg:purple)\
 $python\
 $lua\
 $nodejs\
 $rust\
-[](fg:cyan bg:blue)\
+[](fg:purple bg:pink)\
 $package\
-[](fg:blue bg:magenta)\
+[](fg:pink bg:red)\
 $docker_context\
-[](fg:magenta)\
+[](fg:red)\
 $fill\
-[](bg:cyan fg:black)\
+[](bg:orange fg:background)\
 $time\
-[](fg:cyan bg:blue)\
+[](fg:orange bg:yellow)\
 $battery\
-[](fg:blue bg:magenta)\
+[](fg:yellow bg:green)\
 $cmd_duration\
-[](fg:magenta bg:purple)\
+[](fg:green bg:cyan)\
 $status\
-[](fg:purple bg:black)\
+[](fg:cyan bg:purple)\
 $jobs\
-[](fg:black)\
+[](fg:purple)\
 $line_break\
 $character"""
 
 [os]
 format = '[ $symbol ]($style)'
-style = 'bg:white fg:black'
+style = 'bg:red fg:bright_red'
 disabled = false
 
 [os.symbols]
@@ -88,11 +88,11 @@ Pop = ""
 ssh_only = false
 format = '[ $hostname ]($style)'
 disabled = false
-style = 'bg:red fg:black'
+style = 'bg:orange fg:bright_orange'
 
 [username]
-style_user = 'bg:orange fg:black'
-style_root = 'bg:orange fg:black'
+style_user = 'bg:yellow fg:bright_yellow'
+style_root = 'bg:yellow fg:bright_yellow'
 format = '[ $user ]($style)'
 disabled = false
 show_always = true
@@ -100,7 +100,7 @@ show_always = true
 [directory]
 truncation_length = 3
 truncation_symbol = '../'
-style = 'bg:yellow fg:black'
+style = 'bg:green fg:bright_green'
 format = '[ $path ]($style)'
 truncate_to_repo = false
 
@@ -115,67 +115,67 @@ truncate_to_repo = false
 [git_branch]
 symbol = ""
 format = '[ $symbol $branch ]($style)'
-style = 'bg:green fg:black'
+style = 'bg:cyan fg:bright_cyan'
 
 [git_status]
-style = 'bg:green fg:black'
+style = 'bg:cyan fg:bright_cyan'
 format = '([ $all_status $ahead_behind ]($style))'
-conflicted = '[ conflicted=${count} ](bg:green fg:red)'
-up_to_date = '[ up-to-date ](bg:green fg:black)'
-untracked = '[ untracked=${count} ](bg:green fg:red)'
-ahead = ' ahead=${count} '
-diverged = ' ahead=${ahead_count} behind=${behind_count} '
-behind = ' behind=${count} '
-stashed = ' [ stashed=${count} ](bg:green fg:red)'
-modified = '[ modified=${count} ](bg:green fg:yellow)'
-staged = '[ staged=${count} ](bg:green fg:yellow)'
-renamed = '[ renamed=${count} ](bg:green fg:yellow)'
-deleted = '[ deleted=${count} ](bg:green fg:red)'
+conflicted = '[ conflicted=${count} ](bg:cyan fg:bright_red)'
+up_to_date = '[ up-to-date ](bg:cyan fg:bright_green)'
+untracked = '[ untracked=${count} ](bg:cyan fg:bright_red)'
+ahead = ' ahead=${count}(fg:bright_purple bg:cyan) '
+diverged = ' ahead=${ahead_count} behind=${behind_count}(fg:bright_purple bg:cyan) '
+behind = ' behind=${count}(fg:bright_red bg:cyan) '
+stashed = ' [ stashed=${count} ](fg:bright_red bg:cyan)'
+modified = '[ modified=${count} ](fg:bright_yellow bg:cyan)'
+staged = '[ staged=${count} ](fg:bright_yellow bg:cyan)'
+renamed = '[ renamed=${count} ](fg:bright_yellow bg:cyan)'
+deleted = '[ deleted=${count} ](fg:bright_red bg:cyan)'
 
 [git_state]
-style = 'bg:green fg:black'
+style = 'bg:cyan fg:bright_cyan'
 format = '[ $state ($progress_current/$progress_total) ]($style)'
 
 [git_metrics]
-added_style = 'bg:green fg:black'
-deleted_style = 'bg:red fg:black'
+added_style = 'bg:cyan fg:bright_green'
+deleted_style = 'bg:cyan fg:bright_red'
 disabled = false
 format = '[+$added]($added_style)[-$deleted]($deleted_style)'
 
 [python]
-style = 'bg:cyan fg:black'
+style = 'bg:purple fg:bright_purple'
 symbol = ' '
 format = '[ ${symbol} (${version}) ]($style)'
 
 [lua]
 format = '[ ${symbol} (${version}) ]($style)'
 symbol = ' '
-style = 'bg:cyan fg:black'
+style = 'bg:purple fg:bright_purple'
 
 [nodejs]
-style = 'bg:cyan fg:black'
+style = 'bg:purple fg:bright_purple'
 format = '[ ${symbol} (${version}) ]($style)'
 symbol = ' '
 
 [rust]
-style = 'bg:cyan fg:black'
+style = 'bg:purple fg:bright_purple'
 format = '[ ${symbol} (${version}) ]($style)'
 symbol = ' '
 
 [ruby]
-style = 'bg:cyan fg:black'
+style = 'bg:purple fg:bright_purple'
 format = '[ ${symbol} (${version}) ]($style)'
 symbol = ' '
 
 [package]
 symbol = '󰏗 '
 disabled = false
-style = 'bg:blue fg:black'
+style = 'bg:pink fg:bright_pink'
 format = '[ ${symbol} (${version}) ]($style)'
 
 [docker_context]
 symbol = ' '
-style = 'bg:magenta fg:black'
+style = 'bg:red fg:bright_red'
 format = '[ $symbol ]($style)$path'
 detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
 detect_extensions = ['Dockerfile']
@@ -183,7 +183,7 @@ detect_extensions = ['Dockerfile']
 [time]
 disabled = false
 time_format = "%R"
-style = 'bg:cyan fg:black'
+style = 'bg:orange fg:bright_orange'
 format = '[ 󰥔  $time ]($style)'
 
 [battery]
@@ -193,27 +193,27 @@ charging_symbol = "󰂄"
 discharging_symbol = "󰂃"
 unknown_symbol = "󰁽"
 empty_symbol = "󰂎"
-format = "[[ $symbol ](fg:black bg:blue)]($style)"
+format = "[[ $symbol ](fg:bright_yellow bg:yellow)]($style)"
 
 [[battery.display]]
 threshold = 100
-style = 'bg:blue fg:black'
+style = 'bg:yellow fg:bright_yellow'
 
 [cmd_duration]
 min_time = 500
-style = 'bg:magenta fg:black'
+style = 'bg:green fg:bright_green'
 format = '[ $duration ]($style)'
 
 [status]
 disabled = false
-style = "bg:purple fg:black"
+style = "bg:cyan fg:bright_cyan"
 format = '[ ✖  $status ]($style)'
 map_symbol = true
 recognize_signal_code = true
 
 [jobs]
 symbol = ' '
-style = 'bg:black fg:white'
+style = 'bg:purple fg:bright_purple'
 number_threshold = 1
 format = '[ $symbol ]($style)'
 
@@ -229,24 +229,28 @@ vimcmd_replace_one_symbol = '[](bold fg:purple)'
 vimcmd_replace_symbol = '[](bold fg:purple)'
 vimcmd_visual_symbol = '[](bold fg:yellow)'
 
-[palettes.cyberdyne]
-black='#080808'
-red='#FF8373'
-green='#00C172'
-yellow='#D2A700'
-blue='#0071CF'
-magenta='#FF90FE'
-cyan='#6BFFDD'
-white='#F1F1F1'
-orange='#FF4D00'
-bright_orange='#F28444'
-bright_black='#484848'
-bright_red='#FFC4BE'
-bright_green='#D6FCBA'
-bright_yellow='#FFFED5'
-bright_blue='#C2E3FF'
-bright_purple='#FFB2FE'
-bright_cyan='#E6E7FE'
-bright_white='#FFFFFF'
-background='#151144'
-foreground='#00ff92'
+[palettes.dracula]
+red='#FF5555'
+orange='#FFB86C'
+yellow='#F1FA8C'
+green='#50FA7B'
+cyan='#8BE9FD'
+purple='#BD93F9'
+pink='#FF79C6'
+bright_red='#CB3A2A'
+bright_orange='#A34D14'
+bright_yellow='#846E15'
+bright_green='#14710A'
+bright_cyan='#036A96'
+bright_purple='#644AC9'
+bright_pink='#A3144D'
+background='#282A36'
+foreground='#F8F8F2'
+current_line='#6272A4'
+selection='#44475A'
+comment='#6272A4'
+bright_background='#FFFBEB'
+bright_foreground='#1F1F1F'
+bright_current_line='#6C664B'
+bright_selection='#CFCFDE'
+bright_comment='#6C664B'
