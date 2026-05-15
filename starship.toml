@@ -14,7 +14,6 @@ command_timeout = 1000
 scan_timeout = 35
 
 # Format right side of the terminal
-right_format = ""
 
 # Format the prompt
 format = """
@@ -119,13 +118,13 @@ style = 'bg:cyan fg:bright_cyan'
 
 [git_status]
 style = 'bg:cyan fg:bright_cyan'
-format = '([$all_status$ahead_behind ]($style))'
+format = '([$all_status $ahead_behind ]($style))'
 conflicted = '[conflicted=${count} ](bg:cyan fg:bright_red)'
 up_to_date = '[up-to-date ](bg:cyan fg:bright_green)'
 untracked = '[untracked=${count} ](bg:cyan fg:bright_red)'
-ahead = 'ahead=${count}(fg:bright_purple bg:cyan)'
-diverged = 'ahead=${ahead_count} behind=${behind_count}(fg:bright_purple bg:cyan)'
-behind = 'behind=${count}(fg:bright_red bg:cyan)'
+ahead = 'ahead=${count}(fg:bright_purple bg:cyan) '
+diverged = 'ahead=${ahead_count} behind=${behind_count}(fg:bright_purple bg:cyan) '
+behind = 'behind=${count}(fg:bright_red bg:cyan) '
 stashed = '[stashed=${count} ](fg:bright_red bg:cyan)'
 modified = '[modified=${count} ](fg:bright_yellow bg:cyan)'
 staged = '[staged=${count} ](fg:bright_yellow bg:cyan)'
