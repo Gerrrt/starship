@@ -57,7 +57,7 @@ $line_break\
 $character"""
 
 [os]
-format = '[ $symbol ]($style)'
+format = '[$symbol]($style)'
 style = 'bg:red fg:bright_red'
 disabled = false
 
@@ -86,14 +86,14 @@ Pop = ""
 
 [hostname]
 ssh_only = false
-format = '[ $hostname ]($style)'
+format = '[$hostname]($style)'
 disabled = false
 style = 'bg:orange fg:bright_orange'
 
 [username]
 style_user = 'bg:yellow fg:bright_yellow'
 style_root = 'bg:yellow fg:bright_yellow'
-format = '[ $user ]($style)'
+format = '[$user]($style)'
 disabled = false
 show_always = true
 
@@ -101,7 +101,7 @@ show_always = true
 truncation_length = 3
 truncation_symbol = '../'
 style = 'bg:green fg:bright_green'
-format = '[ $path ]($style)'
+format = '[$path]($style)'
 truncate_to_repo = false
 
 [directory.substitutions]
@@ -114,27 +114,27 @@ truncate_to_repo = false
 
 [git_branch]
 symbol = ""
-format = '[ $symbol $branch ]($style)'
+format = '[$symbol$branch ]($style)'
 style = 'bg:cyan fg:bright_cyan'
 
 [git_status]
 style = 'bg:cyan fg:bright_cyan'
-format = '([ $all_status $ahead_behind ]($style))'
-conflicted = '[ conflicted=${count} ](bg:cyan fg:bright_red)'
-up_to_date = '[ up-to-date ](bg:cyan fg:bright_green)'
-untracked = '[ untracked=${count} ](bg:cyan fg:bright_red)'
-ahead = ' ahead=${count}(fg:bright_purple bg:cyan) '
-diverged = ' ahead=${ahead_count} behind=${behind_count}(fg:bright_purple bg:cyan) '
-behind = ' behind=${count}(fg:bright_red bg:cyan) '
-stashed = ' [ stashed=${count} ](fg:bright_red bg:cyan)'
-modified = '[ modified=${count} ](fg:bright_yellow bg:cyan)'
-staged = '[ staged=${count} ](fg:bright_yellow bg:cyan)'
-renamed = '[ renamed=${count} ](fg:bright_yellow bg:cyan)'
-deleted = '[ deleted=${count} ](fg:bright_red bg:cyan)'
+format = '([$all_status$ahead_behind]($style))'
+conflicted = '[conflicted=${count} ](bg:cyan fg:bright_red)'
+up_to_date = '[up-to-date ](bg:cyan fg:bright_green)'
+untracked = '[untracked=${count} ](bg:cyan fg:bright_red)'
+ahead = 'ahead=${count}(fg:bright_purple bg:cyan)'
+diverged = 'ahead=${ahead_count} behind=${behind_count}(fg:bright_purple bg:cyan)'
+behind = 'behind=${count}(fg:bright_red bg:cyan)'
+stashed = '[stashed=${count} ](fg:bright_red bg:cyan)'
+modified = '[modified=${count} ](fg:bright_yellow bg:cyan)'
+staged = '[staged=${count} ](fg:bright_yellow bg:cyan)'
+renamed = '[renamed=${count} ](fg:bright_yellow bg:cyan)'
+deleted = '[deleted=${count} ](fg:bright_red bg:cyan)'
 
 [git_state]
 style = 'bg:cyan fg:bright_cyan'
-format = '[ $state ($progress_current/$progress_total) ]($style)'
+format = '[$state($progress_current/$progress_total)]($style)'
 
 [git_metrics]
 added_style = 'bg:cyan fg:bright_green'
@@ -145,38 +145,38 @@ format = '[+$added]($added_style)[-$deleted]($deleted_style)'
 [python]
 style = 'bg:purple fg:bright_purple'
 symbol = ' '
-format = '[ ${symbol} (${version}) ]($style)'
+format = '[${symbol} (${version})]($style)'
 
 [lua]
-format = '[ ${symbol} (${version}) ]($style)'
+format = '[${symbol} (${version})]($style)'
 symbol = ' '
 style = 'bg:purple fg:bright_purple'
 
 [nodejs]
 style = 'bg:purple fg:bright_purple'
-format = '[ ${symbol} (${version}) ]($style)'
+format = '[${symbol} (${version})]($style)'
 symbol = ' '
 
 [rust]
 style = 'bg:purple fg:bright_purple'
-format = '[ ${symbol} (${version}) ]($style)'
+format = '[${symbol} (${version})]($style)'
 symbol = ' '
 
 [ruby]
 style = 'bg:purple fg:bright_purple'
-format = '[ ${symbol} (${version}) ]($style)'
+format = '[${symbol} (${version})]($style)'
 symbol = ' '
 
 [package]
 symbol = '󰏗 '
 disabled = false
 style = 'bg:pink fg:bright_pink'
-format = '[ ${symbol} (${version}) ]($style)'
+format = '[${symbol} (${version})]($style)'
 
 [docker_context]
 symbol = ' '
 style = 'bg:red fg:bright_red'
-format = '[ $symbol ]($style)$path'
+format = '[$symbol]($style)$path'
 detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
 detect_extensions = ['Dockerfile']
 
@@ -184,7 +184,7 @@ detect_extensions = ['Dockerfile']
 disabled = false
 time_format = "%R"
 style = 'bg:orange fg:bright_orange'
-format = '[ 󰥔  $time ]($style)'
+format = '[󰥔 $time]($style)'
 
 [battery]
 disabled = false
@@ -193,7 +193,7 @@ charging_symbol = "󰂄"
 discharging_symbol = "󰂃"
 unknown_symbol = "󰁽"
 empty_symbol = "󰂎"
-format = "[[ $symbol ](fg:bright_yellow bg:yellow)]($style)"
+format = "[[$symbol](fg:bright_yellow bg:yellow)]($style)"
 
 [[battery.display]]
 threshold = 100
@@ -202,12 +202,12 @@ style = 'bg:yellow fg:bright_yellow'
 [cmd_duration]
 min_time = 500
 style = 'bg:green fg:bright_green'
-format = '[ $duration ]($style)'
+format = '[$duration]($style)'
 
 [status]
 disabled = false
 style = "bg:cyan fg:bright_cyan"
-format = '[ ✖  $status ]($style)'
+format = '[✖ $status]($style)'
 map_symbol = true
 recognize_signal_code = true
 
@@ -215,7 +215,7 @@ recognize_signal_code = true
 symbol = ' '
 style = 'bg:purple fg:bright_purple'
 number_threshold = 1
-format = '[ $symbol ]($style)'
+format = '[$symbol]($style)'
 
 [line_break]
 disabled = false
